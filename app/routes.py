@@ -47,3 +47,13 @@ def post_appearance():
 
     except Exception as e:
         return jsonify({"errors": [str(e)]}), 400
+
+# DELETE
+@api.route('/episodes/<int:id>', methods=['DELETE'])
+def delete_episode(id):
+    episode = Episode.query.get(id)
+    if episode:
+        db.session.delete(episode)
+        db.session.commit()
+        return '', 204
+    return jsonify({"error": "Episode not found"}), 404
