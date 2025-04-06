@@ -4,7 +4,8 @@ db = SQLAlchemy()
 
 # episode Model
 class Episode(db.Model): 
-
+    __tablename__ = 'episodes'
+    
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String, nullable=False) 
     number = db.Column(db.Integer, nullable=False)
@@ -21,6 +22,8 @@ class Episode(db.Model):
     
     #guest Model
 class Guest(db.Model):
+    __tablename__ = 'guests'
+    
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     occupation = db.Column(db.String, nullable=False)
@@ -37,6 +40,7 @@ class Guest(db.Model):
 
 # appearance Model 
 class Appearance(db.Model):
+    __tablename__ = 'appearances'
 
     id = db.Column(db.Integer, primary_key=True)
     rating = db.Column(db.Integer, nullable=False)
