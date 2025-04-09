@@ -1,6 +1,7 @@
 import csv
 from models import db, Guest, Episode, Appearance
 from datetime import datetime
+from app import app
 
 with app.app_context():
     db.drop_all()
