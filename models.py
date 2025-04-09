@@ -62,3 +62,4 @@ class Appearance(db.Model):
             "episode": self.episode.to_dict()
         }
 
+print("models successful.")

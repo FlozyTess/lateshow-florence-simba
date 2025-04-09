@@ -2,6 +2,10 @@ from flask import Blueprint, request, jsonify
 from .models import db, Episode, Guest, Appearance
 
 api = Blueprint('api', __name__)
+#homeroute
+@api.route('/')
+def home():
+    return "Hello, welcome to lateshow"
 
 #GET/episodes
 @api.route('/episodes' , methods=['GET'])
